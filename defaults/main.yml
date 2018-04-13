@@ -1,2 +1,4 @@
 ---
 # defaults file for cesnet-wayf
+source_git_url: https://github.com/CESNET/wayf.git
+document_root:  /var/www/html
