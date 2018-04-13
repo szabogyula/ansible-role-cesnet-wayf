@@ -1,7 +1,7 @@
 Role Name
 ========
 
-A brief description of the role goes here.
+Install and configure CESNET WAYF software
 
 Requirements
 ------------
@@ -21,18 +21,17 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 Example Playbook
 -------------------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: szabogyula.cesnet-wayf }
 
 License
 -------
 
-BSD
+GNU GPLv3
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Gyula Szabó
+gyula.szabo@sztaki.mta.hu
