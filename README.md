@@ -1,4 +1,4 @@
-Role Name
+szabogyula.cesnet-wayf
 ========
 
 Install and configure CESNET WAYF software
