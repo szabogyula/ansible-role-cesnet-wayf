@@ -1,0 +1,11 @@
+---
+# tasks file for cesnet-wayf
+- name: install app
+  git:
+    repo: "{{ source_git_url }}"
+    dest: "{{ document_root }}"
+
+- name: copy scripts
+  copy:
+    src: "{{ document_root}}/scripts/lib"
+    dest: /opt/getMD
