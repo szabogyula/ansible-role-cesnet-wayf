@@ -1,5 +1,10 @@
 ---
 # tasks file for cesnet-wayf
+- name: cleanup html
+  file:
+    state: absent
+    path: "{{ document_root }}/"
+
 - name: install app
   git:
     repo: "{{ source_git_url }}"
