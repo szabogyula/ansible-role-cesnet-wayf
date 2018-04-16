@@ -10,7 +10,26 @@
     repo: "{{ source_git_url }}"
     dest: "{{ document_root }}"
 
+- name: install dependencies
+  apt: name={{item}} state=installed
+  with_items:
+       - libtext-iconv-perl
+       - libappconfig-perl
+       - libproc-processtable-perl
+       - perlmagick
+       - libjson-perl
+       - sqlite3
+       - xsltproc
+       - xmlsec1
+       - optipng
+
 - name: copy scripts
   copy:
     src: "{{ document_root}}/scripts/lib"
     dest: /opt/getMD
+
+- name: copy theme
+  copy:
+    src: "{{ document_root}}/{{ wayf_theme }}/"
+    dest: "{{ document_root}}"
+  when: wayf_theme is defined
