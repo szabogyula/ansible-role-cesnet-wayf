@@ -36,6 +36,12 @@
     dest: "{{ document_root }}"
   when: wayf_theme is defined
 
+
+- name: create configuration dir
+  file:
+    state: absent
+    path: "{{ configdir }}/"
+
 - name: create configuration getMDrc
   template:
     src: templates/getMDrc
