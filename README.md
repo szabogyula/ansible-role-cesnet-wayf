@@ -1,17 +1,69 @@
 szabogyula.cesnet-wayf
 ========
 
-Install and configure CESNET WAYF software
+Install and configure CESNET WAYF service
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
-
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+source_git_url: https://github.com/CESNET/wayf.git
+
+document_root:  /var/www/html
+
+wayf_theme: false
+
+DEVEL: false
+
+basedir: /opt/getMD
+
+configdir: "{{ basedir }}/etc"
+
+feedList: "{{ configdir}}/feeds"
+
+signerDir: "{{ configdir }}/signers"
+
+lockFile: /var/run/getMD.lock
+
+vardir: "{{ basedir }}/var"
+
+pubBase: "{{ vardir }}/pub"
+
+downloadBase: "{{ vardir }}/download"
+
+cacheDir: "{{ vardir }}/cache"
+
+oldPubBase: "{{ vardir }}/old"
+
+logoPubBaseURI: logoPubBaseURITODO
+
+libdir: "{{ basedir }}/lib"
+
+xslFile:  "{{ libdir }}/md2json.xsl"
+
+logoPredefDir: "{{ libdir }}/logo"
+
+sqlite_schema: "{{ libdir }}/SPDBDef2.sql"
+
+sqlite_db: "{{ pubBase }}/current/lib/SPReg.sqlite"
+
+wget: /usr/bin/wget
+
+sqlite: /usr/bin/sqlite3
+
+xsltproc: /usr/bin/xsltproc
+
+xmlsec: /usr/bin/xmlsec1
+
+max_width: 1000
+
+max_height: 1000
+
+max_age: 86000
+
+min_kept: 6
 
 Dependencies
 ------------

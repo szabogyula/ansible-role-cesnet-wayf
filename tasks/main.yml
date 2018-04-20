@@ -22,14 +22,31 @@
        - xsltproc
        - xmlsec1
        - optipng
+       - wget
+       - php7.0-intl
 
 - name: copy scripts
   copy:
-    src: "{{ document_root}}/scripts/lib"
+    src: "{{ document_root }}/scripts/lib"
     dest: /opt/getMD
 
 - name: copy theme
   copy:
-    src: "{{ document_root}}/{{ wayf_theme }}/"
-    dest: "{{ document_root}}"
+    src: "{{ document_root }}/{{ wayf_theme }}/"
+    dest: "{{ document_root }}"
   when: wayf_theme is defined
+
+- name: create configuration getMDrc
+  template:
+    src: templates/getMDrc
+    dest: "{{ configdir }}/getMDrc"
+
+- name: run getMD
+  shell: "{{ document_root }}/scripts/bin/getMD.pl"
+
+- name: set DEVELOPMENT
+  lineinfile:
+    path: "{{ document_root }}/wayf.php"
+    regexp: '\$DEVEL = false;'
+    line: '$DEVEL = true;'
+  when: DEVEL

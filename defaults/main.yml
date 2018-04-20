@@ -3,3 +3,52 @@
 source_git_url: https://github.com/CESNET/wayf.git
 document_root:  /var/www/html
 wayf_theme: false
+
+# DEVEL
+DEVEL: false
+
+# getMDrc settings
+
+basedir: /opt/getMD
+configdir: "{{ basedir }}/etc"
+
+feedList: "{{ configdir}}/feeds"
+signerDir: "{{ configdir }}/signers"
+lockFile: /var/run/getMD.lock
+
+vardir: "{{ basedir }}/var"
+pubBase: "{{ vardir }}/pub"
+
+downloadBase: "{{ vardir }}/download"
+cacheDir: "{{ vardir }}/cache"
+
+oldPubBase: "{{ vardir }}/old"
+
+logoPubBaseURI: logoPubBaseURITODO
+
+libdir: "{{ basedir }}/lib"
+
+xslFile:  "{{ libdir }}/md2json.xsl"
+
+# where are the predefined logo files (missing.png...)?
+logoPredefDir: "{{ libdir }}/logo"
+
+sqlite_schema: "{{ libdir }}/SPDBDef2.sql"
+sqlite_db: "{{ pubBase }}/current/lib/SPReg.sqlite"
+
+# External commands
+wget: /usr/bin/wget
+sqlite: /usr/bin/sqlite3
+xsltproc: /usr/bin/xsltproc
+xmlsec: /usr/bin/xmlsec1
+
+# Logo parameters
+max_width: 1000
+max_height: 1000
+
+# How long to keep results fro previous runs
+# results from runs older than $max_age (in seconds) will be deleted
+max_age: 86000
+
+# minimum number of results to keep
+min_kept: 6

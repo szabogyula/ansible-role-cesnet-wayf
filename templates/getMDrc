@@ -1,0 +1,53 @@
+# paths
+feedList = "{{ feedList }}"
+signerDir = "{{ signerDir}}"
+lockFile = "{{ lockFile }}"
+
+# Note: myId is defined by the caller before reading this file 
+pubBase = "{{ pubBase }}"
+
+downloadBase = "{{ downloadBase }}"
+cacheDir = "{{ cacheDir }}"
+
+# The directory (or a symlink) from which the data is read by httpd
+oldPubBase = "{{ oldPubBase }}"
+
+downloadDir = $downloadBase/feed
+downloadLogoDir = $downloadBase/logo
+statusDir = $pubBase/status
+oldStatusDir = $oldPubBase/status
+
+feedPubDir = $pubBase/feed
+logoPubDir = $pubBase/logo
+logoPubBaseURI = "{{ logoPubBaseURI }}"
+logoListDir = $cacheDir/logolists
+
+xslFile = <path to xsl file>
+
+# where are the predefined logo files (missing.png...)?
+logoPredefDir = "{{ logoPredefDir }}"
+
+# SP database
+[spdb]
+schema = "{{ sqlite_schema }}"
+db = "{{ sqlite_db }}"
+
+# External commands
+[cmd]
+wget = "{{ wget }}"
+sqlite = "{{ sqlite }}"
+xsltproc = "{{ xsltproc }}"
+xmlsec = "{{ xmlsec }}"
+
+# Logo parameters
+[logo]
+max_width = "{{ max_width }}"
+max_height = "{{ max_height }}"
+
+# How long to keep results fro previous runs
+[oldRun]
+# results from runs older than $max_age (in seconds) will be deleted
+max_age = "{{ max_age }}"
+
+# minimum number of results to keep
+min_kept = "{{ min_kept }}"
