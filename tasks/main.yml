@@ -39,7 +39,7 @@
 
 - name: create configuration dir
   file:
-    state: absent
+    state: directory
     path: "{{ configdir }}/"
 
 - name: create configuration getMDrc
