@@ -49,6 +49,8 @@
 
 - name: run getMD
   shell: "{{ document_root }}/scripts/bin/getMD.pl"
+  tags:
+    - wip
 
 - name: set DEVELOPMENT
   lineinfile:
