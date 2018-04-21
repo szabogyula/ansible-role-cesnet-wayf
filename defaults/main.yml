@@ -1,6 +1,6 @@
 ---
 # defaults file for cesnet-wayf
-source_git_url: https://github.com/CESNET/wayf.git
+source_git_url: https://github.com/szabogyula/wayf.git
 document_root:  /var/www/html
 wayf_theme: false
 run_getMD: false
