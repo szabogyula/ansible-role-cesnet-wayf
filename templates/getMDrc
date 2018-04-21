@@ -22,7 +22,7 @@ logoPubDir = $pubBase/logo
 logoPubBaseURI = "{{ logoPubBaseURI }}"
 logoListDir = $cacheDir/logolists
 
-xslFile = <path to xsl file>
+xslFile = {{ xslFile }}
 
 # where are the predefined logo files (missing.png...)?
 logoPredefDir = "{{ logoPredefDir }}"

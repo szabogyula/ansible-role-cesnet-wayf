@@ -46,7 +46,7 @@
 - name: copy md signers certificates
   copy:
     src: "templates/signers"
-    dest: "{{ configdir }}/signers"
+    dest: "{{ configdir }}/"
     directory_mode: yes
 
 - name: copy feeds
@@ -61,6 +61,7 @@
 
 - name: run getMD
   shell: "{{ document_root }}/scripts/bin/getMD.pl"
+  when: run_getMD
 
 - name: set DEVELOPMENT
   lineinfile:
