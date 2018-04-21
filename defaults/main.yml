@@ -25,7 +25,7 @@ cacheDir: "{{ vardir }}/cache"
 
 oldPubBase: "{{ vardir }}/old"
 
-logoPubBaseURI: logoPubBaseURITODO
+logoPubBaseURI: logo
 
 libdir: "{{ basedir }}/lib"
 
