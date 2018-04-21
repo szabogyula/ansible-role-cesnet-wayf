@@ -24,6 +24,7 @@
        - optipng
        - wget
        - php7.0-intl
+       - rsyslog
 
 - name: copy scripts
   copy:
@@ -42,6 +43,17 @@
     state: directory
     path: "{{ configdir }}/"
 
+- name: copy md signers certificates
+  copy:
+    src: "templates/signers"
+    dest: "{{ configdir }}/signers"
+    directory_mode: yes
+
+- name: copy feeds
+  template:
+    src: templates/feeds
+    dest: "{{ configdir }}/feeds"
+
 - name: create configuration getMDrc
   template:
     src: templates/getMDrc
@@ -49,8 +61,6 @@
 
 - name: run getMD
   shell: "{{ document_root }}/scripts/bin/getMD.pl"
-  tags:
-    - wip
 
 - name: set DEVELOPMENT
   lineinfile:
