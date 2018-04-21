@@ -44,8 +44,8 @@ xsltproc: /usr/bin/xsltproc
 xmlsec: /usr/bin/xmlsec1
 
 # Logo parameters
-max_width: 1000
-max_height: 1000
+max_width: 100
+max_height: 40
 
 # How long to keep results fro previous runs
 # results from runs older than $max_age (in seconds) will be deleted
